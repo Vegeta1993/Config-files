@@ -128,8 +128,9 @@ assign [class="^Foxit Reader$"] $wc3
 assign [class="^Franz$"] $wc4
 assign [class="^Spotify$"] $wc0
 for_window [class="Spotify"] move to workspace $wc0
-assign [class="^Evolution$"] $wc5
+assign [class="^Thunderbird$"] $wc5
 assign [class="Rhythmbox"] $wc0
+assign [class="Riot"] $wc4
 #mouse focus
 
 focus_follows_mouse no
@@ -172,12 +173,13 @@ set $transparent #262525
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command i3status
+	position top
+	status_command i3blocks 
 	i3bar_command i3bar -t
 	mode dock
     	colors {
-        	statusline #696f89
-        	background $transparent
+        	statusline  #b6b6c1  
+	     	background $transparent
 
         	# Type                     border     background    text
         	focused_workspace         #191919      #262525    #bf3f34
@@ -190,9 +192,12 @@ exec xbacklight -set 50
 exec_always xfce4-power-manager
 exec franz-bin
 exec synclient TouchpadOff=1
-exec_always compton -f
-exec_always feh --bg-scale ~/ice_flat.jpg
+exec_always compton -f --config ~/.config/compton.conf
+exec_always feh --bg-scale ~/awesome.jpe
 exec_always redshift
+exec_always thunderbird
+exec_always riot-desktop
+exec_always xcompmgr -c -f -n 
 bindsym $mod+F10 exec xfce4-screenshooter
 bindsym $mod+u exec firefox
 bindsym $mod+t exec thunar
