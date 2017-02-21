@@ -30,8 +30,7 @@ font pango:Happy Monkey 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
+bindsym $mod+Return exec terminix
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -123,7 +122,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $wc0
 
 assign [class="^Firefox$"] $wc1
-assign [class="^Gnome-terminal$"] $wc2
+assign [class="^Terminix$"] $wc2
 assign [class="^Foxit Reader$"] $wc3
 assign [class="^Franz$"] $wc4
 assign [class="^Spotify$"] $wc0
@@ -167,9 +166,11 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
+# No titlebar
+for_window [class="^.*"] border pixel 5
 bindsym $mod+r mode "resize"
-set $transparent #262525
+
+set $transparent #1d2021B1 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -178,14 +179,13 @@ bar {
 	i3bar_command i3bar -t
 	mode dock
     	colors {
-        	statusline  #b6b6c1  
-	     	background $transparent
-
-        	# Type                     border     background    text
-        	focused_workspace         #191919      #262525    #bf3f34
-        	active_workspace          #191919      #262525    #696f89
-        	inactive_workspace        #191919      #262525    #696f89
-        	urgent_workspace          #191919      #262525    #c7a551
+		statusline #76c2d6
+		background $transparent
+        	# Type                     border     background     text
+       		focused_workspace         #191919     #1d2021A0    #bf3f34
+        	active_workspace          #191919     #1d2021A0    #696f89
+        	inactive_workspace        #191919     #1d2021A0    #696f89
+        	urgent_workspace          #191919     #1d2021A0    #c7a551
 	}
 }
 exec xbacklight -set 50
