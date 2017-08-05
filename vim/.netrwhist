@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/vintux/studies/contrib/Nautilus File Manager Integration'
+let g:netrw_dirhist_2='/home/vintux/studies/com.whatsapp_2.16.155-451245_minAPI7(armeabi,armeabi-v7a,mips,x86)(nodpi)_apkmirror.com/res/layout'
+let g:netrw_dirhist_3='/home/vintux/Desktop/CrackmeA'
+let g:netrw_dirhist_4='/home/vintux/Desktop/CrackmeA/res'
