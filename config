@@ -226,3 +226,5 @@ for_window [class="Main.py"] floating enable
 exec_always ~/.config/i3/lightson.sh
 bindsym $mod+F6 exec light -U 20
 bindsym $mod+F5 exec light -A 20
+bindsym $mod+F8 exec setxkbmap us 
+bindsym $mod+F9 exec setxkbmap de
