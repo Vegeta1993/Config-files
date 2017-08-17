@@ -223,8 +223,7 @@ bindsym $mod+F3 exec synclient TouchpadOff=1
 bindsym $mod+F7 exec synclient TouchpadOff=0
 bindsym $mod+shift+x exec i3lock --color "#737373"
 for_window [class="Main.py"] floating enable
+exec_always guake
 exec_always ~/.config/i3/lightson.sh
 bindsym $mod+F6 exec light -U 20
 bindsym $mod+F5 exec light -A 20
-bindsym $mod+F8 exec setxkbmap us 
-bindsym $mod+F9 exec setxkbmap de
