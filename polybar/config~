@@ -40,7 +40,7 @@ yellow      = ${xrdb:*.color11:#00ffff}
 spotify-green = #1db954
 
 [bar/base]
-monitor = HDMI-1-1
+monitor = HDMI-1
 width = 100%
 height = 25
 ;offset-x = 1%
@@ -69,7 +69,7 @@ font-2 = FontAwesome:pixelsize=10;0
 
 modules-left = i3 spotify previous playpause next 
 modules-center = date
-modules-right =  curl volume memory cpu wlan eth battery
+modules-right =  volume memory cpu wlan eth battery
 tray-position = right
 tray-padding = 3
 tray-transparent = true
@@ -84,7 +84,7 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 [bar/base1]
-monitor = eDP-1-1
+monitor = eDP-1
 width = 100%
 height = 25
 ;offset-x = 1%
@@ -113,7 +113,7 @@ font-2 = FontAwesome:pixelsize=10;0
 
 modules-left = i3 spotify previous playpause next 
 modules-center = date
-modules-right =  curl volume memory cpu wlan eth battery
+modules-right =  volume memory cpu wlan eth battery
 tray-position = right
 tray-padding = 3
 tray-transparent = true
@@ -180,7 +180,7 @@ label =  %gb_used%
 
 [module/wlan]
 type = internal/network
-interface = enp3s0		;
+interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -202,13 +202,13 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp3s0
+interface = enp0s25
 interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %downspeed% %upspeed%
+label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -338,16 +338,6 @@ click-right       = xdesktop -g 4
 format-foreground = ${colors.foreground}
 format-underline = ${colors.spotify-green}
 format-padding = 0
-
-[module/pomodoro]
-type = custom/script
-exec = python2.7 /usr/bin/i3-gnome-pomodoro status
-interval = 1
-
-[module/curl]
-type = custom/script
-exec = curl -s ifconfig.me
-interval = 10
 
 [settings]
 screenchange-reload = true

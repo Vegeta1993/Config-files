@@ -17,9 +17,9 @@ done
 #    echo "in here"
 #    polybar top &
 #fi
-
-polybar base &
 polybar base1 &
+polybar base &
+
 echo "Bars launched..."
 
 
